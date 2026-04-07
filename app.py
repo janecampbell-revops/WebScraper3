@@ -1,3 +1,12 @@
+import subprocess
+import sys
+
+@st.cache_resource
+def install_playwright():
+    subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
+
+install_playwright()
+
 import streamlit as st
 import pandas as pd
 import threading
